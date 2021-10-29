@@ -26,6 +26,7 @@ if($tw.node) {
 		// Initialise admin authorization principles
 		var authorizedUserName = (this.get("username") && this.get("password")) ? this.get("username") : null;
 		this.authorizationPrincipals["admin"] = (this.get("admin") || authorizedUserName).split(',').map($tw.utils.trim);
+		$tw.utils.log(`Adding route ${$tw.boot.url}`);
 		// Save the CONFIG_HOST_TIDDLER to disk
 		$tw.wiki.addTiddler($tw.wiki.getTiddler(CONFIG_HOST_TIDDLER));
 		// Add all the routes, this also loads and adds authorization priciples for each wiki
@@ -45,10 +46,11 @@ if($tw.node) {
 			readers = this.authorizationPrincipals["readers"],
 			writers = this.authorizationPrincipals["writers"];
 		// Setup the other wiki routes
-		$tw.utils.each($tw.boot.wikiInfo.serveWikis, function (group,groupPrefix) {
+		$tw.utils.each($tw.boot.wikiInfo.serveWikis, function(group,groupPrefix) {
 			$tw.utils.each(group, function (serveInfo) {
 				let state = $tw.utils.loadStateWiki(groupPrefix,serveInfo);
 				if(state) {
+					$tw.utils.log(`Adding route ${state.boot.url}`);
 					// Save the CONFIG_HOST_TIDDLER to disk
 					state.wiki.addTiddler(state.wiki.getTiddler(CONFIG_HOST_TIDDLER));
 					// Add the authorized principal overrides
@@ -60,7 +62,6 @@ if($tw.node) {
 					}
 					server.authorizationPrincipals[`${state.boot.pathPrefix}/readers`] = readers;
 					server.authorizationPrincipals[`${state.boot.pathPrefix}/writers`] = writers;
-					$tw.utils.log(`Added route ${state.boot.url}`);
 				};
 			});
 		});
