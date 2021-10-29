@@ -1,0 +1,25 @@
+title: $:/config/commons/multiserver
+
+{
+  "servername": "Yjs.wiki",
+  "port": 8080,
+  "host": "127.0.0.1",
+  "path-prefix": "",
+  "admin": "(authenticated)",
+  "readers": "(anon)",
+  "writers": "(authenticated)",
+  "username": "",
+  "password": "",
+  "credentials": "",
+  "tls-key": "",
+  "tls-cert": "",
+  "tls-passphrase": "",
+  "debug-level": "none",
+  "root-render-type": "text/plain",
+  "root-serve-type": "text/html",
+  "root-tiddler": "$:/core/save/all",
+  "system-tiddler-render-template": "$:/core/templates/wikified-tiddler",
+  "system-tiddler-render-type": "text/plain",
+  "tiddler-render-template": "$:/core/templates/server/static.tiddler.html",
+  "tiddler-render-type": "text/html"
+}

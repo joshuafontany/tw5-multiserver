@@ -1,0 +1,10 @@
+{
+  "title": "$:/plugins/commons/multiserver",
+  "description": "Serve multiple wikis with TiddlyWiki5 on node.js",
+  "author": "joshuafontany",
+  "version": "0.0.1",
+  "core-version": ">=5.1.23",
+  "source": "https://github.com/joshuafontany/tw5-yjs",
+  "plugin-type": "plugin",
+  "list": "readme license.md"
+}

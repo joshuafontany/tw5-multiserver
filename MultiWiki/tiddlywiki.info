@@ -1,0 +1,13 @@
+{
+	"description": "This is the default multi-wiki edition for the tw5-yjswebsockets plugin",
+	"plugins": [],
+	"themes": [
+		"tiddlywiki/vanilla",
+		"tiddlywiki/snowwhite"
+	],
+	"serveWikis": [],
+	"build": {
+		"index": [
+			"--rendertiddler","$:/core/save/all","index.html","text/plain"]
+	}
+}

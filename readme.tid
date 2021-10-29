@@ -1,0 +1,18 @@
+title: $:/plugins/commons/yjs/readme
+caption: readme
+
+! Yjs
+
+Yjs is a high-performance CRDT for building collaborative applications that sync automatically.
+
+It exposes its internal CRDT model as shared data types that can be manipulated concurrently. Shared types are similar to common data types like Map and Array. They can be manipulated, fire events when changes happen, and automatically merge without merge conflicts.
+
+This plugins imports the core Yjs libraries into the TW5 module system.
+
+https://github.com/yjs/yjs
+
+This repository contains a collection of shared types that can be observed for changes and manipulated concurrently. Network functionality and two-way-bindings are implemented in separate modules.
+
+! Yjs Docs
+
+https://docs.yjs.dev/
