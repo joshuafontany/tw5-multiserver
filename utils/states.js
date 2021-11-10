@@ -13,8 +13,7 @@ Various static utility functions.
 
 const fs = require('fs'),
 	path = require('path'),
-	widget = require("$:/core/modules/widgets/widget.js"),
-	CONFIG_HOST_TIDDLER = "$:/config/tiddlyweb/host";
+	widget = require("$:/core/modules/widgets/widget.js");
 
 $tw.states = $tw.states || new Map();
 

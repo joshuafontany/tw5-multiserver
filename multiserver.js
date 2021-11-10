@@ -21,22 +21,23 @@ if($tw.node) {
 	  options: 
 	*/
 	function MultiServer(options) {
-		options.variables = $tw.utils.extend($tw.boot.settings,options.variables);
 		Server.call(this, options);
-		// Initialise admin authorization principles
-		var authorizedUserName = (this.get("username") && this.get("password")) ? this.get("username") : null;
-		this.authorizationPrincipals["admin"] = (this.get("admin") || authorizedUserName).split(',').map($tw.utils.trim);
-		$tw.utils.log(`Adding route ${$tw.boot.url}`);
+		// Init the multi-wiki boot state
+		this.boot.regexp = null;
+		this.boot.url = this.boot.origin + this.boot.pathPrefix;
+		this.boot.serveInfo = {
+			name: this.boot.pathPrefix,
+			path: this.boot.wikiPath
+		};
+		$tw.utils.log(`Adding route ${this.boot.url}`);
 		// Save the CONFIG_HOST_TIDDLER to disk
-		$tw.wiki.addTiddler($tw.wiki.getTiddler(CONFIG_HOST_TIDDLER));
+		this.wiki.addTiddler(this.wiki.getTiddler(CONFIG_HOST_TIDDLER));
 		// Add all the routes, this also loads and adds authorization priciples for each wiki
 		this.addWikiRoutes();
 	}
 
 	MultiServer.prototype = Object.create(Server.prototype);
 	MultiServer.prototype.constructor = MultiServer;
-
-	MultiServer.prototype.defaultVariables = Server.prototype.defaultVariables;
 
 	/*
 	  Load each wiki. Log each wiki's authorizationPrincipals as `${state.boot.pathPrefix}/readers` & `${state.boot.pathPrefix}/writers`.

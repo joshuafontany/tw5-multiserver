@@ -1,9 +1,10 @@
-title: $:/config/commons/multiserver
+title: $:/config/tiddlywiki/server
 
 {
   "servername": "Yjs.wiki",
-  "port": 8080,
+  "origin": "",
   "host": "127.0.0.1",
+  "port": 8080,
   "path-prefix": "",
   "admin": "(authenticated)",
   "readers": "(anon)",
@@ -14,12 +15,12 @@ title: $:/config/commons/multiserver
   "tls-key": "",
   "tls-cert": "",
   "tls-passphrase": "",
-  "debug-level": "none",
   "root-render-type": "text/plain",
   "root-serve-type": "text/html",
   "root-tiddler": "$:/core/save/all",
+  "tiddler-render-template": "$:/core/templates/server/static.tiddler.html",
+  "tiddler-render-type": "text/html",
   "system-tiddler-render-template": "$:/core/templates/wikified-tiddler",
   "system-tiddler-render-type": "text/plain",
-  "tiddler-render-template": "$:/core/templates/server/static.tiddler.html",
-  "tiddler-render-type": "text/html"
+  "debug-level": "none"
 }

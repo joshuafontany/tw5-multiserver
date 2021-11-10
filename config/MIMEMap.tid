@@ -1,4 +1,4 @@
-title: $:/config/commons/multiserver/MIMEMap
+title: $:/config/commons/server/MIMEMap
 type: application/json
 note: The file extensions and their associated mime-types that the server is allowed to serve.
 
