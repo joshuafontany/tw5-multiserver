@@ -24,12 +24,11 @@ if($tw.node) {
 		Server.call(this, options);
 		// Init the multi-wiki boot state
 		this.boot.regexp = null;
-		this.boot.url = this.boot.origin + this.boot.pathPrefix;
 		this.boot.serveInfo = {
 			name: this.boot.pathPrefix,
 			path: this.boot.wikiPath
 		};
-		$tw.utils.log(`Adding route ${this.boot.url}`);
+		$tw.utils.log(`Adding route ${this.boot.origin + this.boot.pathPrefix}`);
 		// Save the CONFIG_HOST_TIDDLER to disk
 		this.wiki.addTiddler(this.wiki.getTiddler(CONFIG_HOST_TIDDLER));
 		// Add all the routes, this also loads and adds authorization priciples for each wiki
@@ -51,7 +50,7 @@ if($tw.node) {
 			$tw.utils.each(group, function (serveInfo) {
 				let state = $tw.utils.loadStateWiki(groupPrefix,serveInfo);
 				if(state) {
-					$tw.utils.log(`Adding route ${state.boot.url}`);
+					$tw.utils.log(`Adding route ${state.boot.origin + state.boot.pathPrefix}`);
 					// Save the CONFIG_HOST_TIDDLER to disk
 					state.wiki.addTiddler(state.wiki.getTiddler(CONFIG_HOST_TIDDLER));
 					// Add the authorized principal overrides
@@ -67,27 +66,6 @@ if($tw.node) {
 			});
 		});
 	};
-
-	MultiServer.prototype.isAdmin = function (username) {
-		if(!!username) {
-			return this.isAuthorized("admin", username);
-		} else {
-			return null;
-		}
-	}
-
-	MultiServer.prototype.getUserAccess = function (username, pathPrefix) {
-		pathPrefix = pathPrefix || '';
-		if(!!username) {
-			let type, accessPath = pathPrefix ? pathPrefix + '/' : '';
-			type = (this.isAuthorized(accessPath + "readers", username)) ? "readers" : null;
-			type = (this.isAuthorized(accessPath + "writers", username)) ? "writers" : type;
-			type = (this.isAuthorized("admin", username)) ? "admin" : type;
-			return type;
-		} else {
-			return null;
-		}
-	}
 
 	MultiServer.prototype.requestHandler = function (request, response, options) {
 		options = options || {};

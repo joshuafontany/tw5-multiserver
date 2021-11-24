@@ -140,7 +140,7 @@ State.prototype.loadPlugin = function (name, paths) {
 			return;
 		}
 	}
-	$tw.utils.log(`Warning cannot find plugin '${name}' for wiki '${this.boot.url}''`);
+	$tw.utils.log(`Warning cannot find plugin '${name}' for wiki '${this.boot.origin + this.boot.pathPrefix}''`);
 };
 
 /* 
