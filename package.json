@@ -1,20 +1,19 @@
 {
-  "name": "tw5-multiserver",
+  "name": "@tw5/multiserver",
   "version": "0.0.1",
-  "description": "Multiserver for TiddlyWiki5",
-  "main": "multiserver.js",
+  "description": "Multi-wiki server for TiddlyWiki5",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joshuafontany/TW5-multiserver.git"
+    "url": "git+https://github.com/joshuafontany/tw5-multiserver.git"
   },
   "keywords": [],
   "author": "joshuafontany <joshua.fontany@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/joshuafontany/TW5-multiserver/issues"
+    "url": "https://github.com/joshuafontany/tw5-multiserver/issues"
   },
-  "homepage": "https://github.com/joshuafontany/TW5-multiserver#readme"
+  "homepage": "https://github.com/joshuafontany/tw5-multiserver#readme"
 }

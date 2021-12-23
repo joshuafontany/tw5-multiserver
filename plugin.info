@@ -1,5 +1,5 @@
 {
-  "title": "$:/plugins/commons/multiserver",
+  "title": "$:/plugins/@tw5/multiserver",
   "description": "Serve multiple wikis with TiddlyWiki5 on node.js",
   "author": "joshuafontany",
   "version": "0.0.1",

@@ -1,5 +1,5 @@
 /*\
-title: $:/plugins/commons/multiserver/commands/multi-listen.js
+title: $:/plugins/@tw5/multiserver/commands/multi-listen.js
 type: application/javascript
 module-type: command
 
@@ -18,7 +18,7 @@ exports.info = {
 	mandatoryParameters: []
 };
 
-const MultiServer = require('$:/plugins/commons/multiserver/multiserver.js').MultiServer;
+const MultiServer = require('$:/plugins/@tw5/multiserver/multiserver.js').MultiServer;
 
 const Command = function (params, commander, callback) {
 	let self = this;
@@ -33,7 +33,7 @@ Command.prototype.execute = function () {
 	this.server = new MultiServer({
 		wiki: this.commander.wiki,
 		requiredPlugins: [
-			"$:/plugins/commons/multiserver",
+			"$:/plugins/@tw5/multiserver",
 			"$:/plugins/tiddlywiki/filesystem",
 			"$:/plugins/tiddlywiki/tiddlyweb"
 		].join(','),

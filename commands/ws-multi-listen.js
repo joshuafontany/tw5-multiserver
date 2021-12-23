@@ -1,5 +1,5 @@
 /*\
-title: $:/plugins/commons/yjs/commands/ws-multi-listen.js
+title: $:/plugins/@tw5/multiserver/commands/ws-multi-listen.js
 type: application/javascript
 module-type: command
 
@@ -25,7 +25,7 @@ const Command = function (params, commander, callback) {
 };
 
 Command.prototype.execute = function () {
-	const MultiServer = require('$:/plugins/commons/multiserver/multiserver.js').MultiServer,
+	const MultiServer = require('$:/plugins/@tw5/multiserver/multiserver.js').MultiServer,
 	WebSocketServer = require('../wsserver.js').WebSocketServer;
 	let self = this;
 	const loadServer = async () => {
@@ -33,9 +33,9 @@ Command.prototype.execute = function () {
 		this.server = new MultiServer({
 			wiki: this.commander.wiki,
 			requiredPlugins: [
-				"$:/plugins/commons/multiserver",
-				"$:/plugins/commons/yjs",
-				"$:/plugins/commons/yjswebsockets",
+				"$:/plugins/@tw5/multiserver",
+				"$:/plugins/@tw5/yjs",
+				"$:/plugins/@tw5/yjswebsockets",
 				"$:/plugins/tiddlywiki/filesystem"
 			].join(','),
 			variables: this.params

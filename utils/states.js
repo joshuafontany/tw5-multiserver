@@ -1,5 +1,5 @@
 /*\
-title: $:/plugins/commons/multiserver/utils/states.js
+title: $:/plugins/@tw5/multiserver/utils/states.js
 type: application/javascript
 module-type: utils-node
 

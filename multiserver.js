@@ -1,5 +1,5 @@
 /*\
-title: $:/plugins/commons/multiserver/multiserver.js
+title: $:/plugins/@tw5/multiserver/multiserver.js
 type: application/javascript
 module-type: library
 
